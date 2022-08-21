@@ -18,7 +18,7 @@ class ResponseData(BaseModel):
 Instrumentator().instrument(app).expose(app)
 
 @app.get("/authUsers/{internalId}", response_model=ResponseData)
-def read_root(internalId: str):
+def read_root(internalId: int):
     logger.debug("internalId recibido: " + internalId)
     
     url = 'https://63016ffbe71700618a3866e4.mockapi.io/users'
