@@ -4,10 +4,10 @@ from main import app
 
 client = TestClient(app)
 
-def test_index_route():
+def test_route():
     response = client.get('/authUsers/95092')
     assert response.status_code == 200
 
-def test_index_route_no_content():
+def test_route_no_content():
     response = client.get('/authUsers/test')
     assert response.status_code == 204
