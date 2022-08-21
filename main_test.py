@@ -9,5 +9,5 @@ def test_index_route():
     assert response.status_code == 200
 
 def test_index_route_no_content():
-    response = client.get('/infoUsers/test')
+    response = client.get('/authUsers/test')
     assert response.status_code == 204
