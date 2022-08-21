@@ -20,7 +20,7 @@ Instrumentator().instrument(app).expose(app)
 @app.get("/authUsers/{internalId}", response_model=ResponseData)
 def read_root(internalId: int):
     internalId_string = str(internalId)
-    logger.debug("internalId recibido: " + internalId_string)
+    logger.debug("internalId recibido : " + internalId_string)
     
     url = 'https://63016ffbe71700618a3866e4.mockapi.io/users'
     responseData = ResponseData(internalId= internalId)
