@@ -19,12 +19,13 @@ Instrumentator().instrument(app).expose(app)
 
 @app.get("/authUsers/{internalId}", response_model=ResponseData)
 def read_root(internalId: int):
-    logger.debug("internalId recibido: " + internalId)
+    internalId_string = str(internalId)
+    logger.debug("internalId recibido: " + internalId_string)
     
     url = 'https://63016ffbe71700618a3866e4.mockapi.io/users'
     responseData = ResponseData(internalId= internalId)
     
-    requestResult = requests.get(url + "?internalId=" + internalId, timeout=5)
+    requestResult = requests.get(url + "?internalId=" + internalId_string, timeout=5)
     
     if(len(requestResult.json()) >= 1):
         responseData.encryptedToken = requestResult.json()[0]["encryptedToken"]
