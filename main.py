@@ -13,7 +13,7 @@ app = FastAPI()
 
 class ResponseData(BaseModel):
     encryptedToken: str = ""
-    internalId: str
+    internalId: int
 
 Instrumentator().instrument(app).expose(app)
 
