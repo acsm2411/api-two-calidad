@@ -5,7 +5,7 @@ from main import app
 client = TestClient(app)
 
 def test_route():
-    response = client.get('/authUsers/95092')
+    response = client.get('/authUsers/35319')
     assert response.status_code == 200
 
 def test_route_string():
